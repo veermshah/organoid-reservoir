@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organoid-reservoir"
+version = "0.1.0"
+description = "Brainoware-style reservoir computing with a simulated organoid-like spiking network"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Veer Shah" }]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "pandas>=2.1",
+    "pyyaml>=6.0",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+lstm = ["torch>=2.2"]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+    "types-PyYAML",
+    "nbclient>=0.10",
+    "nbformat>=5.9",
+    "ipykernel>=6.29",
+]
+
+[tool.setuptools]
+packages = ["organoid_reservoir"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY", "SIM"]
+ignore = ["E741"]
+
+[tool.mypy]
+python_version = "3.12"
+packages = ["organoid_reservoir"]
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "matplotlib.*", "mpl_toolkits.*", "torch.*", "scipy.*", "pandas.*"]
+ignore_missing_imports = true
