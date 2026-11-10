@@ -31,3 +31,6 @@ results/raw/
 
 # OS
 .DS_Store
+
+# Smoke-test outputs
+results/quick/
