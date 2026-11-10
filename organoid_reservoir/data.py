@@ -165,9 +165,7 @@ def narma10(n: int, seed: int = 0, discard: int = 200) -> tuple[FloatArray, Floa
     u = rng.uniform(0.0, 0.5, total)
     y = np.zeros(total + 1)
     for t in range(9, total):
-        y[t + 1] = (
-            0.3 * y[t] + 0.05 * y[t] * y[t - 9 : t + 1].sum() + 1.5 * u[t - 9] * u[t] + 0.1
-        )
+        y[t + 1] = 0.3 * y[t] + 0.05 * y[t] * y[t - 9 : t + 1].sum() + 1.5 * u[t - 9] * u[t] + 0.1
     return u[discard:], y[discard + 1 :]
 
 

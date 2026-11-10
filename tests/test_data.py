@@ -49,14 +49,14 @@ def test_henon_is_deterministic_and_bounded():
 def test_narma10_shapes_and_range():
     u, y = data.narma10(1000, seed=1)
     assert u.shape == y.shape == (1000,)
-    assert 0 <= u.min() and u.max() <= 0.5
+    assert u.min() >= 0 and u.max() <= 0.5
     assert np.isfinite(y).all() and 0 < y.mean() < 1
 
 
 def test_mackey_glass_is_chaotic_but_bounded():
     x = data.mackey_glass(400)
     assert x.shape == (400,)
-    assert 0.2 < x.min() and x.max() < 1.6
+    assert x.min() > 0.2 and x.max() < 1.6
     assert x.std() > 0.1
 
 

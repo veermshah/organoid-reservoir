@@ -59,7 +59,7 @@ def test_stdp_changes_only_existing_ee_synapses(small_encoder):
     w0 = res.W.copy()
     res.run(_stim(small_encoder, B=2, T=20), plastic=True)
     ne = res.n_exc
-    changed = res.W != w0
+    changed = w0 != res.W
     assert changed[:ne, :ne].any()
     assert not changed[ne:, :].any() and not changed[:, ne:].any()
     assert not changed[~res.mask].any()

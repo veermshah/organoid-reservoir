@@ -87,9 +87,7 @@ class SpikingReservoir:
         built with the same config, encoder and seed produce identical spikes.
     """
 
-    def __init__(
-        self, config: ReservoirConfig, encoder: ElectrodeEncoder, seed: int = 0
-    ) -> None:
+    def __init__(self, config: ReservoirConfig, encoder: ElectrodeEncoder, seed: int = 0) -> None:
         self.config = config
         self.encoder = encoder
         self.seed = seed
@@ -262,7 +260,7 @@ class SpikingReservoir:
             spikes = v >= 30.0
             if spikes.any():
                 v = np.where(spikes, c, v)
-                u = u + spikes * d
+                u += spikes * d
             trace *= trace_decay
             trace += spikes[:, None, :]
 

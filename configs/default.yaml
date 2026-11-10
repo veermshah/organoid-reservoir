@@ -1,0 +1,67 @@
+# Full experiment used for the numbers in report.md.
+# Every key is optional; anything left out keeps the default from config.py.
+name: default
+seeds: [0, 1, 2, 3, 4]
+data_dir: data/raw
+results_dir: results
+figures_dir: figures
+stdp_epochs: 1
+stdp_batch_size: 30
+
+reservoir:
+  n_neurons: 400
+  frac_exc: 0.8
+  conn_lambda: 0.3
+  mean_in_degree: 40
+  w_exc: 1.6
+  w_inh: 4.0
+  tau_syn: 5.0
+  slow_frac: 0.0
+  noise_exc: 3.0
+  noise_inh: 2.0
+  trace_taus: [20.0]
+  stdp:
+    a_plus: 0.01
+    a_minus: 0.012
+    tau_plus: 20.0
+    tau_minus: 20.0
+    w_max_factor: 3.0
+    normalize: true
+
+encoder:
+  electrodes_per_input: 2
+  max_threshold: 1.5
+  spread: 0.35
+  mode: pulse
+  max_rate_hz: 200.0
+  pulse_amplitude: 40.0
+  current_gain: 20.0
+  frame_steps: 20
+
+esn:
+  n_neurons: 400
+  spectral_radius: 0.9
+  leak_rate: 0.5
+  input_scaling: 0.5
+  bias_scaling: 0.1
+  density: 0.1
+
+lstm:
+  enabled: true
+  hidden: 64
+  epochs: 150
+  lr: 0.01
+  window: 20
+
+timeseries:
+  washout: 100
+  n_train: 2000
+  n_test: 1000
+  electrodes_per_input: 8
+  ar_lags: 10
+  mackey_horizon: 1
+  memory_max_delay: 40
+
+size_sweep:
+  sizes: [100, 200, 400, 800]
+  seeds: [0, 1, 2]

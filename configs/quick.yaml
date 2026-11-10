@@ -1,0 +1,22 @@
+# Smoke test: tiny networks, two seeds, short series. Runs in about a minute.
+name: quick
+seeds: [0, 1]
+results_dir: results/quick
+figures_dir: results/quick/figures
+reservoir:
+  n_neurons: 120
+esn:
+  n_neurons: 120
+lstm:
+  hidden: 16
+  epochs: 20
+timeseries:
+  n_train: 500
+  n_test: 300
+  memory_max_delay: 15
+size_sweep:
+  sizes: [60, 120]
+  seeds: [0]
+diagnostics:
+  gains: [0.6, 1.0, 1.4]
+  n_streams: 40

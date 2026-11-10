@@ -37,7 +37,7 @@ def _make_model(n_in: int, hidden: int, n_out: int) -> Any:
     import torch
     from torch import nn
 
-    class Net(nn.Module):  # type: ignore[misc]
+    class Net(nn.Module):
         def __init__(self) -> None:
             super().__init__()
             self.lstm = nn.LSTM(n_in, hidden, batch_first=True)

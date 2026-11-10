@@ -1,0 +1,10 @@
+# Hyperparameter grid: fraction of excitatory cells x connection length constant.
+name: sweep
+hyper_sweep:
+  task: vowels
+  x_key: reservoir.frac_exc
+  x_values: [0.6, 0.7, 0.8, 0.9]
+  y_key: reservoir.conn_lambda
+  y_values: [0.1, 0.2, 0.3, 0.5, 0.8]
+  n_neurons: 200
+  seeds: [0, 1]
