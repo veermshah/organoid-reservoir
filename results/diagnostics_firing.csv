@@ -1,0 +1,7 @@
+task,condition,seed,rate_exc_hz,rate_inh_hz,isi_cv,pop_rate_cv,frac_silent,spectral_radius,config_hash,git_commit
+firing,spontaneous,0,1.39922,5.03437,0.794684,1.63242,0.0075,24.6589,770ae1f48e5c,892ef9ba24
+firing,driven,0,11.1797,20.9,0.775822,1.19023,0,24.6589,770ae1f48e5c,892ef9ba24
+firing,spontaneous,1,0.865234,3.83594,0.613846,1.04387,0.005,17.6653,770ae1f48e5c,892ef9ba24
+firing,driven,1,10.009,18.5766,0.71297,1.04875,0,17.6653,770ae1f48e5c,892ef9ba24
+firing,spontaneous,2,1.45977,4.49219,0.655133,1.89527,0.005,20.7717,770ae1f48e5c,892ef9ba24
+firing,driven,2,7.77578,17.3031,0.66222,0.915471,0,20.7717,770ae1f48e5c,892ef9ba24

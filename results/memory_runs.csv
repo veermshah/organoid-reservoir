@@ -1,0 +1,11 @@
+task,model,seed,n_neurons,metric,value,seconds,config_hash,git_commit
+memory,spiking,0,400,memory_capacity,0.479603,2.893,7b4f6f318259,90f67027c1
+memory,esn,0,400,memory_capacity,9.28643,1.668,7b4f6f318259,90f67027c1
+memory,spiking,1,400,memory_capacity,0.694896,2.902,7b4f6f318259,90f67027c1
+memory,esn,1,400,memory_capacity,10.6315,1.666,7b4f6f318259,90f67027c1
+memory,spiking,2,400,memory_capacity,0.560355,2.87,7b4f6f318259,90f67027c1
+memory,esn,2,400,memory_capacity,9.68543,1.666,7b4f6f318259,90f67027c1
+memory,spiking,3,400,memory_capacity,0.621371,2.907,7b4f6f318259,90f67027c1
+memory,esn,3,400,memory_capacity,10.7566,1.667,7b4f6f318259,90f67027c1
+memory,spiking,4,400,memory_capacity,0.475412,2.869,7b4f6f318259,90f67027c1
+memory,esn,4,400,memory_capacity,10.3249,1.663,7b4f6f318259,90f67027c1
