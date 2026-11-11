@@ -254,7 +254,7 @@ class Runner:
         # How much of the gap is internal noise? DC reservoir with scaled background noise.
         noise_rows = []
         for seed in seeds:
-            for scale in (0.0, 0.25, 0.5, 1.0, 2.0):
+            for scale in (0.1, 0.25, 0.5, 1.0, 2.0):
                 ncfg = copy.deepcopy(cfg)
                 ncfg.reservoir.noise_exc *= scale
                 ncfg.reservoir.noise_inh *= scale
